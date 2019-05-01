@@ -1,0 +1,70 @@
+/*
+Moreno Jn Baptiste
+Student ID: 986781
+ */
+body{
+    background: #FFF url("../images/silverware.jpg") fixed;
+    color: #404040;
+    font-size: 11pt;
+    font-family: Georgia, Garamond, Serif;
+    display: flex;
+    flex-direction: column;
+}
+.bold{
+    font-weight: bold;
+}
+.line-over{
+    text-decoration: line-through;
+}
+h1{
+    color: #A4A400;
+    text-decoration: underline;
+    background: #F0F0F0;
+    font-family: "Lucida Sans Unicode", Helvetica, Arial, Sans-serif;
+    font-size: 22pt;
+    letter-spacing: 0.25em;
+    display: table;
+    align-self: center;
+
+}
+h2{
+    color: #A4A400;
+    text-decoration: underline;
+    background: #F0F0F0;
+    font-family: "Lucida Sans Unicode", Helvetica, Arial, Sans-serif;
+    font-weight: normal;
+    font-size: 18pt;
+    letter-spacing: 0.25em;
+    display: table;
+    align-self: flex-start;
+}
+a{
+    color: #A4A400;
+}
+.line-under{
+    text-decoration: underline;
+}
+.ul-without-point{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+pre{
+    align-self: flex-end;
+}
+.w3c{
+    align-self: flex-end;
+}
+.comment{
+    background: #FFFFA8;
+    font-style: italic;
+}
+.right{
+    float: right;
+}
+ul li{
+    list-style-image: url("../images/pie_icon.gif");
+}
+figure{
+    margin-left: 0;
+}
