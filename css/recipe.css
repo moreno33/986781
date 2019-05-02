@@ -3,7 +3,7 @@ Moreno Jn Baptiste
 Student ID: 986781
  */
 body{
-    background: #FFF url("../images/silverware.jpg") fixed;
+    background: #FFF url("../images/hmw1/silverware.jpg") fixed;
     color: #404040;
     font-size: 11pt;
     font-family: Georgia, Garamond, Serif;
@@ -63,7 +63,7 @@ pre{
     float: right;
 }
 ul li{
-    list-style-image: url("../images/pie_icon.gif");
+    list-style-image: url("../images/hmw1/pie_icon.gif");
 }
 figure{
     margin-left: 0;
