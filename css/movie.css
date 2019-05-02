@@ -1,0 +1,135 @@
+/*Moreno Jn Baptiste
+986781
+This is the homework 2.
+This section is the section where I presented
+the movie review.*/
+body{
+    background: url("../images/hmw2/background.png");
+    margin: 0;
+    padding: 0;
+    font: 8pt Verdana, Tahoma, Sans-serif;
+}
+#header{
+    text-align: center;
+    height: 50px;
+    background: url("../images/hmw2/bannerbg.png");;
+}
+h1{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24pt;
+    font-weight: bold ;
+    font-family: Tahoma, Verdana, Sans-serif;
+    text-shadow: 3px 3px #999999;
+}
+
+#content{
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 4px gray solid;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#rotten{
+    width: 550px;
+    background: url("../images/hmw2/background.png");
+    border-top-left-radius: 16px;
+    vertical-align: top;
+    float: left;
+}
+#rotten-top{
+    background: url("../images/hmw2/rbg.png");
+    border-top-left-radius: 16px;
+    height: 83px;
+}
+#rotten-top img{
+    border-top-left-radius: 16px;
+}
+#rotten-top span{
+    font-size: 48pt;
+    font-weight: bold;
+    color: red;
+    vertical-align: top;
+}
+
+#left-column{
+    display: inline-block;
+    width: 47%;
+    vertical-align: top;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    float: left;
+}
+#right-column{
+    display: inline-block;
+    width: 47%;
+    vertical-align: top;
+    margin-right: 2%;
+    margin-top: 2%;
+    float: right;
+
+}
+.review{
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.review img{
+    float: left;
+    margin-right: 5px;
+
+}
+.review div{
+    background: #E8DC9B;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 8px;
+    overflow: hidden;
+    font-weight: bold;
+}
+#overview{
+    max-width: 250px;
+    font-size: 8pt;
+    font-family: Arial, Sans-serif;
+    float: right;
+    background: #A2B964;
+}
+#overview img{
+    border-top-right-radius: 16px;
+    width: 100%;
+}
+#overview dl{
+    margin-left: 10pt;
+}
+#overview dt{
+    font-weight: bold;
+}
+#overview dd{
+    margin-bottom: 10pt;
+}
+dd>ul{
+    margin: 0;
+    padding: 0;
+}
+dd>ul>li{
+    list-style-type: none;
+}
+#content>p{
+    float: bottom;
+    clear: both;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    background: #A2B964;
+}
+#validator-button{
+    float: right;
+}
+.italic{
+    font-style: italic;
+}
