@@ -18,12 +18,42 @@
 
     <body>
         <header>
-            <img src="../../images/hmw3/nerdluv.png" alt="banner logo" /> <br />
+            <img src="../../images/hmw3/nerdluv.png" alt="banner logo" />
             where meek geeks meet
         </header>
 
         <!-- your HTML output follows -->
-
+        <form>
+            <fieldset>
+                <legend>New User Signup:</legend>
+                <div><strong>Name: </strong><input type="text" maxlength="16"></div><br/>
+                <div>
+                    <strong>Gender: </strong>
+                    <input id="male" type="radio" name="gender"><label for="male">male</label>
+                    <input id="female" type="radio" name="gender" checked><label for="female">female</label>
+                </div>
+                <div><strong>Age: </strong><input size="6" type="text" maxlength="2"/></div>
+                <div>
+                    <strong>Personality type: </strong>
+                    <input size="6" maxlength="4" type="text">
+                    <label><a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">(Don't know your type?)</a></label>
+                </div>
+                <div>
+                    <strong>Favorite OS: </strong>
+                    <select>
+                        <option selected>Windows</option>
+                        <option>Mac OS X</option>
+                        <option>Linux</option>
+                    </select>
+                </div>
+                <div>
+                    <strong>Seeking age: </strong>
+                    <input size="6" maxlength="2" type="text" placeholder="min">
+                    <input size="6" maxlength="2" type="text" placeholder="max">
+                </div>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
         <!-- shared page bottom HTML -->
         <p>
             This page is for single nerds to meet and date each other!  Type in your personal information and wait for the nerdly luv to begin!  Thank you for using our site.
