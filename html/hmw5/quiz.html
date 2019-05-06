@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/quiz.css">
+</head>
+<body>
+    <h2>Quiz</h2>
+    <dl>
+        <dt>1. What is the difference between a web server and a web container?</dt>
+        <dd>
+            The web server is the application that allows the sent and receipt of message
+            with the client trough a request/response protocol HTTP. The Web server can
+            generate only static messages.
+            Whereas a web container is a group of objects that allows the treatment of
+            messages dynamically. It allows to return dynamic response according to the
+            user input.
+        </dd>
+        <dt>2. What is a servlet?</dt>
+        <dd>
+            A servlet is a java class that extends the capability of servers that host
+            applications access by means of request-response programming model.<br/>
+            We can also say that a servlet is a server-side java code that can handle
+            http requests and return dynamic content.
+        </dd>
+        <dt>3. How do web servers and web containers interact with servlets?</dt>
+        <dd>
+            When the client sends a request, the server handles the request to the web container and
+            the web container is the one that needs to search in the list of its servlets if there is
+            one that its url-pattern corresponds to the url request. If it finds one, it leaves to this
+            servlet the responsibility of process the request, if it doesn't find anyone it throws a
+            404 error.
+        </dd>
+        <dt>4. Who creates request objects?</dt>
+        <dd>
+            The client is the one that creates the request object.
+        </dd>
+        <dt>5. What are the states in the servlet lifecycle?</dt>
+        <dd>
+            <ul>
+                <li>Loading- Class c= Class.forName(...);</li>
+                <li>Intantiation- c.newInstance();</li>
+                <li>Initiation-init();</li>
+                <li>Implementation-service();</li>
+                <li>Destruction-destroy</li>
+            </ul>
+        </dd>
+        <dt>6. Who calls init and when?</dt>
+        <dd>
+            The web container is the one that calls init and it calls it right after the instantiation.
+            And this method is called only once during the lifetime of the servlet.
+        </dd>
+        <dt>7. Which of init, service, and doGet should you override?</dt>
+        <dd>
+            doGet is the one that should be overridden most of the time.<br/>
+            (But sometimes we can override init in case we want to instantiate  an object only once
+            in the servlet, for example a database connection.)
+        </dd>
+        <dt>8. In what sense are servlets multi-threaded?</dt>
+        <dd>
+            Servlets are multi-threaded in the sense that
+            their service() method may be called many times and for
+            that they need to be multi-threaded to handle all the
+            requests more smoothly.
+        </dd>
+        <dt>9. What are the implications of this for servlet instance variables?</dt>
+        <dd>
+            The implication is that servlet instance variables are not thread-safe
+            and we need to be careful when we are creating instance variable. For instance,
+            it's not a good practice to have request or session scope as an instance
+            variable in a servlet.
+        </dd>
+    </dl>
+
+</body>
+</html>
