@@ -1,3 +1,12 @@
 .profile-pic{
     width: 500px;
 }
+h1{
+    font-weight: normal;
+    text-align: center;
+}
+figure{
+    margin-left: auto;
+    margin-right: auto;
+    background: red;
+}

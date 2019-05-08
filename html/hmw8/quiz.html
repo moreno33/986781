@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/quiz.css">
+</head>
+<body>
+
+    <h1>State management quiz</h1>
+
+    <dl>
+        <dt>1. Can post requests be bookmarked? What are the problems?</dt>
+        <dd>
+            No, a post request can't be bookmarked. Trying to do so will result in a get request.
+            The problem is just because a post request is not idempotent. Because, normally when
+            you bookmarked a request, you do that in the objective to retrieve the same thing later,
+            but it can't be like that for a post request because it's not idempotent.
+        </dd>
+        <dt>2. What is the purpose of request dispatching?</dt>
+        <dd>
+
+        </dd>
+        <dt>3. What is the difference between redirect and request dispatch?</dt>
+        <dd>
+            A request dispatch is operated only to the side of the server and also you can dispatch a request only to
+            a resource that is on the same server.<br/>
+            Whereas a redirect is doing to the client side and you can redirect even to a resource
+            that is not on the same server.
+        </dd>
+        <dt>4. What is an attribute ?</dt>
+        <dd>
+            An attribute is a variable that you can save in one of the scope of an application. When I say scope,
+            I mean Page, Request, Session, Application. To save the attribute you call the <strong>setAttribute()</strong> method
+            and to retrieve you call the <strong>getAttribute()</strong> method
+        </dd>
+        <dt>5. What is the difference between attributes and parameters?</dt>
+        <dd>
+            There are 2 main differences between attributes and parameters:<br/>
+            There first one is: only the scope Request can contain parameter. Whereas an attribute
+            can be saved in the Page, Request, Session or Application scope.<br/>
+            The second one is: an attribute is passed by the user using the <strong>setAttribute()</strong>
+            method whereas the parameter is taken from the url or the request body and
+            saved automatically by the web container in the request object.
+        </dd>
+        <dt>6. What are dangers of using attributes?</dt>
+        <dd>
+            The dangers of using attributes are to know in which scope to save them. For example, if you save a
+            confidential attribute in the application scope, it will exist during the lifetime of the application
+            and it will be visible to all the users.
+        </dd>
+        <dt>7. What does it mean to say that http is stateless? Give an example of a stateful protocol.</dt>
+        <dd>
+            Saying that http is a stateless protocol means it doesn't keep anything and doens't have any idea
+            about its previous state. It execute only once and after that it looses all information about itself.
+        </dd>
+        8. Give 5 different methods for maintaining state information (count each attribute scope as one
+        method).
+        <dt>9. How long does a session last?</dt>
+        <dd>
+            It depends. If the application is active that means a person is using it, the session will last until
+            the application is closed. But, in case of some web container like tomcat, if the applications stays
+            inactive for 30mn, the session will be destroy automatically.
+        </dd>
+        <dt>9. How long does a session last?</dt>
+        <dd>
+
+        </dd>
+        <dt>10. What is a cookie, and how long does a cookie last?</dt>
+        <dd></dd>
+        <dt>11. What is the purpose of URL rewriting?</dt>
+        <dd></dd>
+        <dt>12. Why does the request attribute report ‘null’ for the maintaining state demo?</dt>
+        <dd></dd>
+    </dl>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
