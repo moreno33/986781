@@ -18,9 +18,9 @@
             but it can't be like that for a post request because it's not idempotent.
         </dd>
         <dt>2. What is the purpose of request dispatching?</dt>
-        <dd
         <dd>
-
+            The purpose of request dispatching is to allow interaction between servlet and
+            JSP.
         </dd>
         <dt>3. What is the difference between redirect and request dispatch?</dt>
         <dd>
@@ -55,22 +55,21 @@
             Saying that http is a stateless protocol means it doesn't keep anything and doens't have any idea
             about its previous state. It execute only once and after that it looses all information about itself.
         </dd>
-        8. Give 5 different methods for maintaining state information (count each attribute scope as one
-        method).
+        <dt>8. Give 5 different methods for maintaining state information (count each attribute scope as one
+            method).</dt>
         <dt>9. How long does a session last?</dt>
         <dd>
             It depends. If the application is active that means a person is using it, the session will last until
             the application is closed. But, in case of some web container like tomcat, if the applications stays
             inactive for 30mn, the session will be destroy automatically.
         </dd>
-        <dt>9. How long does a session last?</dt>
-        <dd>
-
-        </dd>
         <dt>10. What is a cookie, and how long does a cookie last?</dt>
-        <dd></dd>
+        <dd>
+            A cookie is a small file saved in the browser and it lifetime depends on what
+            we have precised for it. We can fix a long or short lifetime for a cookie.
+        </dd>
         <dt>11. What is the purpose of URL rewriting?</dt>
-        <dd></dd>
+        <dd>The purpose of URL rewriting is to allow the creation of beautiful and meaningful URL</dd>
         <dt>12. Why does the request attribute report ‘null’ for the maintaining state demo?</dt>
         <dd></dd>
     </dl>
