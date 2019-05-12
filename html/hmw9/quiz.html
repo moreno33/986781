@@ -3,83 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../../css/quiz.css"/>
+    <link rel="stylesheet" href="../../css/quiz.css">
 </head>
 <body>
-    <h1>JSP Introduction Quiz</h1>
-    <dt>1. What is the main value of Java Server Pages?</dt>
-    <dd>
-        The Java Server Pages generally called JSP allows to decouple the view from the servlet(controller).
-        It allows to use the MVC pattern properly and also allows to use dynamic data within html.
-    </dd>
-    <dt>2. How are JSP pages related to servlets?</dt>
-    <dd>
-        JSP pages are servlets. When you run your application, the web container is going to compile
-        JSP pages into servlet.
-    </dd>
-    <dt>3. How are JSP pages related to HTML?</dt>
-    <dd>
-        JSP pages is done mostly with HTML code. Besides, its main role is to contain HTML and to allow
-        the use of dynamic java code.
-    </dd>
-    <dt>4. Give an example of a JSP scriptlet and show how it will look in the JSP servlet .</dt>
-    <dd>
-        Ex : <% out.print("Moreno"); %><br/>
-        In the JSP servlet it will look like that:<br/>
-        PrintWriter out= response.getWriter();<br/>
-        out.print("Moreno");
-    </dd>
-    <dt>5. Give an example of a JSP declaration and show how it will look in the JSP servlet.</dt>
-    <dd>
-        Ex: <%! int count= 0; %><br/>
-        In the servlet it will look almost the same:<br/>
-        int count= 0;
-    </dd>
-    <dt>6. Give an example of a JSP comment and show how it will look in the JSP servlet.</dt>
-    <dd>
-        Ex: <%--My comment --%><br/>
-        In the servlet it will look like that:<br/>
-        //My comment<br/>
-        or<br/>
-        /*My comment*/
-    </dd>
-    <dt>7. Give an example of a JSP expression and show how it will look in the JSP servlet.</dt>
-    <dd>
-        We suppose that count is already declared in a scriptlet.<br/>
-        Ex: <%= count++ %>
-        In the servlet it will look almost the same:<br/>
-        int count= 0;
-        count++;
-    </dd>
-    <dt>8. Give an example of a JSP directive and show how it will look in the JSP servlet.</dt>
-    <dd>
-        Ex: <%@ page import="java.util.Date" %><br/>
-        In the servlet it will look like that:<br/>
-        import java.util.Date;
-    </dd>
-    <dt>9. Explain how an EL expression is evaluated.</dt>
-    <dd>
-        When you have an EL expression like that ${person.age} or ${person[age]},
-        if person is a bean, age is a property of person, if person is a map, age is
-        a key.
-    </dd>
-    <dt>10. Explain how servlet attributes are involved in EL expressions.</dt>
-    <dd>
-        When you have an El expression, the web container checks firstly to see if the attribute is
-        available in the page scope, if it is, it picks it, in the opposite it checks
-        in the request scope, if it is it picks it in the opposite it checks in the
-        session scope, if it is it picks it, in the opposite it checks in the application
-        scope, if it is, it picks it, in the opposite it just gives it up.
-    </dd>
-    <dd></dd>
-    <dt>11. Explain how servlets and JSPs use request dispatch to interact.</dt>
-    <dd>
-        To interact between them we can use the method getRequestDispatcher() of the
-        HttpServletRequest that will allow you to forward the request and the response object
-        to the servlet.<br/>
-        N.B. This forwarding is completely different from the redirect, because the redirect is done
-        to the client side whereas the forwarding is done to the server side.
-    </dd>
+
+    <h1>State management quiz</h1>
+
+    <dl>
+        <dt>1. Can post requests be bookmarked? What are the problems?</dt>
+        <dd>
+            No, a post request can't be bookmarked. Trying to do so will result in a get request.
+            The problem is just because a post request is not idempotent. Because, normally when
+            you bookmarked a request, you do that in the objective to retrieve the same thing later,
+            but it can't be like that for a post request because it's not idempotent.
+        </dd>
+        <dt>2. What is the purpose of request dispatching?</dt>
+        <dd>
+            The purpose of request dispatching is to allow interaction between servlet and
+            JSP.
+        </dd>
+        <dt>3. What is the difference between redirect and request dispatch?</dt>
+        <dd>
+            A request dispatch is operated only to the side of the server and also you can dispatch a request only to
+            a resource that is on the same server.<br/>
+            Whereas a redirect is doing to the client side and you can redirect even to a resource
+            that is not on the same server.
+        </dd>
+        <dt>4. What is an attribute ?</dt>
+        <dd>
+            An attribute is a variable that you can save in one of the scope of an application. When I say scope,
+            I mean Page, Request, Session, Application. To save the attribute you call the <strong>setAttribute()</strong> method
+            and to retrieve you call the <strong>getAttribute()</strong> method
+        </dd>
+        <dt>5. What is the difference between attributes and parameters?</dt>
+        <dd>
+            There are 2 main differences between attributes and parameters:<br/>
+            There first one is: only the scope Request can contain parameter. Whereas an attribute
+            can be saved in the Page, Request, Session or Application scope.<br/>
+            The second one is: an attribute is passed by the user using the <strong>setAttribute()</strong>
+            method whereas the parameter is taken from the url or the request body and
+            saved automatically by the web container in the request object.
+        </dd>
+        <dt>6. What are dangers of using attributes?</dt>
+        <dd>
+            The dangers of using attributes are to know in which scope to save them. For example, if you save a
+            confidential attribute in the application scope, it will exist during the lifetime of the application
+            and it will be visible to all the users.
+        </dd>
+        <dt>7. What does it mean to say that http is stateless? Give an example of a stateful protocol.</dt>
+        <dd>
+            Saying that http is a stateless protocol means it doesn't keep anything and doens't have any idea
+            about its previous state. It execute only once and after that it looses all information about itself.
+        </dd>
+        <dt>8. Give 5 different methods for maintaining state information (count each attribute scope as one
+            method).</dt>
+        <dd>request, session, application, cookie, hidden field on a form</dd>
+        <dt>9. How long does a session last?</dt>
+        <dd>
+            It depends. If the application is active that means a person is using it, the session will last until
+            the application is closed. But, in case of some web container like tomcat, if the applications stays
+            inactive for 30mn, the session will be destroy automatically.
+        </dd>
+        <dt>10. What is a cookie, and how long does a cookie last?</dt>
+        <dd>
+            A cookie is a small file saved in the browser and it lifetime depends on what
+            we have precised for it. We can fix a long or short lifetime for a cookie.
+        </dd>
+        <dt>11. What is the purpose of URL rewriting?</dt>
+        <dd>The purpose of URL rewriting is to allow the creation of beautiful and meaningful URL</dd>
+        <dt>12. Why does the request attribute report ‘null’ for the maintaining state demo?</dt>
+        <dd></dd>
+    </dl>
+
+
+
+
+
+
+
+
 
 </body>
 </html>

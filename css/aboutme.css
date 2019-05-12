@@ -1,0 +1,58 @@
+body{
+    color: #333;
+    background: #F1F1F1;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: #333;
+    color: #FFF;
+    margin: 0;
+    padding: 5px 0 5px 20px;
+}
+table{
+    width: 50%;
+}
+table tr:nth-child(even), table tr:nth-child(even) a{
+    background: #333;
+    color: white;
+}
+
+td{
+    padding: 5px;
+}
+
+p{
+    width: 50%;
+}
+p, h1{
+    display: table;
+}
+p, h1, table{
+    margin-left: auto;
+    margin-right: auto;
+}
+caption{
+    font-weight: bold;
+}
+img{
+    max-width: 300px;
+}
+figure{
+    display: inline-block;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+footer{
+    background: gray;
+    margin: 0;
+    padding: 5px;
+    color: #FFF;
+}

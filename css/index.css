@@ -1,11 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #F1F1F1;
+}
+header{
+    background: orange;
+    color: #FFF;
+    margin: 0;
+    padding: 5px 0 5px 20px;
+}
+figure{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background: orange;
+    position: relative;
+}
+figure::before{
+    content: "";
+    background: orange;
+    width: 200px;
+    height: 20px;
+    position: absolute;
+    left: -200px;
+}
+figure::after{
+    content: "";
+    background: orange;
+    width: 200px;
+    height: 20px;
+    position: absolute;
+    right: -200px;
+    bottom: 10px;
+}
 .profile-pic{
     width: 500px;
 }
-h1{
+h1, h2{
     font-weight: normal;
     text-align: center;
 }
-figure{
+.center{
     margin-left: auto;
     margin-right: auto;
+    padding: 15px;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+ul{
+    list-style-type: none;
 }
