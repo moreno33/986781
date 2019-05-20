@@ -166,50 +166,184 @@
         Public Method: incrementAge( ) // uses private getAge( )<br/>
     </dt>
     <dd>
-        
+        var employee= function () {<br/>
+        let name;<br/>
+        let age;<br/>
+        let salary;<br/>
+
+        let setAge= function (newAge) {<br/>
+        age= newAge;<br/>
+        }<br/>
+        let setSalary= function (newSalary) {<br/>
+        salary= newSalary;<br/>
+        }<br/>
+
+        let setName= function (newName) {<br/>
+        name= newName;<br/>
+        }<br/>
+        let getAge= function () {<br/>
+        return age;<br/>
+        }<br/>
+        let getSalary= function () {<br/>
+        return salary;<br/>
+        }<br/>
+        let getName= function () {<br/>
+        return name;<br/>
+        }<br/>
+        let increaseSalary= function (percentage) {<br/>
+        let increase= salary*percentage;<br/>
+        salary+=increase;<br/>
+        }<br/>
+        let incrementAge= function () {<br/>
+        age++;<br/>
+        }<br/>
+        return {<br/>
+        setAge: setAge,<br/>
+        setSalary: setSalary,<br/>
+        setName: setName,<br/>
+        getAge: getAge,<br/>
+        getSalary: getSalary,<br/>
+        getName: getName,<br/>
+        increaseSalary: increaseSalary,<br/>
+        incrementAge: incrementAge<br/>
+        }<br/>
+        }
+    </dd>
+    <dt>11. Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern.</dt>
+    <dd>
+        var employee= (function () {<br/>
+        var name;<br/>
+        var age;<br/>
+        var salary;<br/>
+
+        return {<br/>
+        setAge:function (newAge) {<br/>
+        age= newAge;<br/>
+        },<br/>
+        setSalary:function (newSalary) {<br/>
+        salary= newSalary;<br/>
+        },<br/>
+        setName:function (newName) {<br/>
+        name= newName;<br/>
+        },<br/>
+        getAge:function () {<br/>
+        return age;<br/>
+        },<br/>
+        getSalary:function () {<br/>
+        return salary;<br/>
+        },<br/>
+        getName:function () {<br/>
+        return name;<br/>
+        },<br/>
+        increaseSalary:function (percentage) {<br/>
+        var increase= salary*percentage;<br/>
+        salary+=increase;<br/>
+        },<br/>
+        incrementAge:function () {<br/>
+        age++;<br/>
+        }<br/>
+        }<br/>
+        })();<br/>
+    </dd>
+    <dt>12. Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern.</dt>
+    <dd>
+        var employee= function () {<br/>
+        var name;<br/>
+        var age;<br/>
+        var salary;<br/>
+
+        let emloyeeObject={};<br/>
+        emloyeeObject.setAge= function (newAge) {<br/>
+        age= newAge;<br/>
+        }<br/>
+
+        emloyeeObject.setSalary= function (newSalary) {<br/>
+        salary= newSalary;<br/>
+        }<br/>
+
+        emloyeeObject.setName= function (newName) {<br/>
+        name= newName;<br/>
+        }<br/>
+        emloyeeObject.getAge= function () {<br/>
+        return age;<br/>
+        }<br/>
+        emloyeeObject.getSalary= function () {<br/>
+        return salary;<br/>
+        }<br/>
+        emloyeeObject.getName= function () {<br/>
+        return name;<br/>
+        }<br/>
+        emloyeeObject.increaseSalary= function (percentage) {<br/>
+        var increase= salary*percentage;<br/>
+        salary+=increase;<br/>
+        }<br/>
+        emloyeeObject.incrementAge= function () {<br/>
+        age++;<br/>
+        }<br/>
+        return emloyeeObject;<br/>
+        }
+    </dd>
+    <dt>
+        13. Write a few Javascript instructions to extend the Module of Question 10 to have a public address field and
+        public methods setAddress(newAddress) and getAddress( ).
+    </dt>
+    <dd>
+        var emp= employee();<br/>
+
+        emp.address= "";<br/>
+        emp.setAddress= function(newAddress){<br/>
+        this.address= newAddress;<br/>
+        }<br/>
+        emp.getAddress= function(){<br/>
+        return this.address;<br/>
+        }
+    </dd>
+    <dt>
+        14. What is the output of the following code?<br/>
+        const promise = new Promise((resolve, reject) => {<br/>
+        reject(“Hattori”);<br/>
+        });<br/>
+        promise.then(val => alert(“Success: “ + val))<br/>
+        .catch(e => alert(“Error: “ + e));<br/>
+    </dt>
+    <dd>The output is : <strong>Error: Hattori</strong></dd>
+
+    <dt>
+        15. What is the output of the following code?<br/>
+        const promise = new Promise((resolve, reject) => {<br/>
+        resolve(“Hattori”);<br/>
+        setTimeout(()=> reject(“Yoshi”), 500);<br/>
+        });<br/>
+        promise.then(val => alert(“Success: “ + val))<br/>
+        .catch(e => alert(“Error: “ + e));<br/>
+    </dt>
+    <dd>The ouoput will be : <strong>Success: Hattori</strong></dd>
+    <dt>
+        16. What is the output of the following code?<br/>
+        function job(state) {<br/>
+        return new Promise(function(resolve, reject) {<br/>
+        if (state) {<br/>
+        resolve('success');<br/>
+        } else {<br/>
+        reject('error');<br/>
+        }<br/>
+        });<br/>
+        }<br/>
+        let promise = job(true);<br/>
+        promise.then(function(data) {<br/>
+        console.log(data);<br/>
+        return job(false);})<br/>
+        .catch(function(error) {<br/>
+        console.log(error);<br/>
+        return 'Error caught';<br/>
+        });
+    </dt>
+    <dd>
+        The output will be :<br/>
+        <strong>success</strong><br/>
+        <strong>error</strong>
     </dd>
 </dl>
-
-
-
-
-
-11. Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern.
-12. Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern.
-13. Write a few Javascript instructions to extend the Module of Question 10 to have a public address field and
-public methods setAddress(newAddress) and getAddress( ).
-14. What is the output of the following code?
-const promise = new Promise((resolve, reject) => {
-reject(“Hattori”);
-});
-promise.then(val => alert(“Success: “ + val))
-.catch(e => alert(“Error: “ + e));
-15. What is the output of the following code?
-const promise = new Promise((resolve, reject) => {
-resolve(“Hattori”);
-setTimeout(()=> reject(“Yoshi”), 500);
-});
-promise.then(val => alert(“Success: “ + val))
-.catch(e => alert(“Error: “ + e));
-4
-16. What is the output of the following code?
-function job(state) {
-return new Promise(function(resolve, reject) {
-if (state) {
-resolve('success');
-} else {
-reject('error');
-}
-});
-}
-let promise = job(true);
-promise.then(function(data) {
-console.log(data);
-return job(false);})
-.catch(function(error) {
-console.log(error);
-return 'Error caught';
-});
 
 </body>
 </html>
