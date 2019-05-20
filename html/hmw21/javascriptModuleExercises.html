@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/quiz.css"/>
+</head>
+<body>
+
+<h1>JavaScript Module Exercises</h1>
+<dl>
+    <dt>
+        1. Determine what this Javascript code will print out (without running it):<br/>
+        x = 1;<br/>
+        var a = 5;<br/>
+        var b = 10;<br/>
+        var c = function(a, b, c) {<br/>
+        document.write(x);<br/>
+        document.write(a);<br/>
+        var f = function(a, b, c) {<br/>
+        b = a;<br/>
+        document.write(b);<br/>
+        b = c;<br/>
+        var x = 5;<br/>
+        }<br/>
+        f(a,b,c);<br/>
+        document.write(b);<br/>
+        var x = 10;<br/>
+        }<br/>
+        c(8,9,10);<br/>
+        document.write(b);<br/>
+        document.write(x);<br/>
+        }<br/>
+    </dt>
+    <dd>The output will be: <strong>undefined889101</strong></dd>
+    <dt>2. Define Global Scope and Local Scope in Javascript.</dt>
+    <dd>
+        When we say Global Scope we say the implicit window object scope. When we say Local Scope
+        we mean the scope between the bracket of a function.
+    </dd>
+    <dt>
+        3. Consider the following structure of Javascript code:<br/>
+        // Scope A<br/>
+        function XFunc () {<br/>
+        // Scope B<br/>
+        function YFunc () {<br/>
+        // Scope C<br/>
+        };<br/>
+        };
+    </dt>
+    <dd>
+        <ul>
+            <li>
+            <dt>(a) Do statements in Scope A have access to variables defined in Scope B and C?</dt>
+            <dd>No</dd>
+            </li>
+            <li>
+                <dt>(b) Do statements in Scope B have access to variables defined in Scope A?</dt>
+                <dd>Yes</dd>
+            </li>
+            <li>
+                <dt>(c) Do statements in Scope B have access to variables defined in Scope C?<br/></dt>
+                <dd>No</dd>
+            </li>
+            <li>
+                <dt>(d) Do statements in Scope C have access to variables defined in Scope A?</dt>
+                <dd>Yes</dd>
+            </li>
+            <li>
+                <dt>(e) Do statements in Scope C have access to variables defined in Scope B?</dt>
+                <dd>Yes</dd>
+            </li>
+        </ul>
+    </dd>
+    <dt>
+        4. What will be printed by the following (answer without running it)?<br/>
+        var x = 9;<br/>
+        function myFunction() {<br/>
+        return x * x;<br/>
+        }<br/>
+        document.write(myFunction());<br/>
+        x = 5;<br/>
+        document.write(myFunction());<br/>
+    </dt>
+    <dd>8125</dd>
+    <dt>
+        5.<br/>
+        var foo = 1;<br/>
+        function bar() {<br/>
+        if (!foo) {<br/>
+        var foo = 10;<br/>
+        }<br/>
+        alert(foo);<br/>
+        }<br/>
+        bar();<br/>
+        What will the alert print out? (Answer without running the code. Remember ‘hoisting’.)?<br/>
+    </dt>
+    <dd>The output will be : <strong>10</strong></dd>
+    <dt>
+        6. Consider the following definition of an add( ) function to increment a counter variable:<br/>
+        var add = (function () {<br/>
+        var counter = 0;<br/>
+        return function () {<br/>
+        return counter += 1;<br/>
+        }<br/>
+        })();<br/>
+        Modify the above module to define a count object with two methods: add( ) and reset( ). The count.add( ) method<br/>
+        adds one to the counter (as above). The count.reset( ) method sets the counter to 0.<br/>
+    </dt>
+    <dd>
+        var count= {<br/>
+        counter:0,<br/>
+        add:function () {<br/>
+        return this.counter++;<br/>
+        },<br/>
+        reset:function () {<br/>
+        this.counter= 0;<br/>
+        }<br/>
+        }<br/>
+    </dd>
+    <dt>7. In the definition of add( ) shown in question 6, identify the "free" variable. In the context of a function closure,
+        what is a "free" variable?</dt>
+    <dd>
+        The free variable is <strong>count</strong>.<br/>
+        In the context of function closure, a free variable is a variable that refers to
+        a function which its not its parameter or local variable.
+    </dd>
+    <dt>
+        8. The add( ) function defined in question 6 always adds 1 to the counter each time it is called. Write a definition
+        of a function make_adder(inc), whose return value is an add function with increment value inc (instead of 1). Here
+        is an example of using this function:<br/>
+        add5 = make_adder(5);<br/>
+        add5( ); add5( ); add5( ); // final counter value is 15<br/>
+        add7 = make_adder(7);<br/>
+        add7( ); add7( ); add7( ); // final counter value is 21<br/>
+    </dt>
+    <dd>
+        function make_adder(inc) {<br/>
+        var count= 0;<br/>
+        return function add() {<br/>
+        return count += inc;<br/>
+        }<br/>
+        }<br/>
+    </dd>
+    <dt>
+        9. Suppose you are given a file of Javascript code containing a list of many function and variable declarations. All of
+        these function and variable names will be added to the Global Javascript namespace. What simple modification to
+        the Javascript file can remove all the names from the Global namespace?
+    </dt>
+    <dd>
+        We can just use the "Module Pattern".
+    </dd>
+    <dt>
+        10. Using the Revealing Module Pattern, write a Javascript definition of a Module that creates an Employee Object<br/>
+        with the following fields and methods:<br/>
+        Private Field: name<br/>
+        Private Field: age<br/>
+        Private Field: salary<br/>
+        Public Method: setAge(newAge)<br/>
+        Public Method: setSalary(newSalary)<br/>
+        Public Method: setName(newName)<br/>
+        Private Method: getAge( )<br/>
+        Private Method: getSalary( )<br/>
+        Private Method: getName( )<br/>
+        Public Method: increaseSalary(percentage) // uses private getSalary( )<br/>
+        Public Method: incrementAge( ) // uses private getAge( )<br/>
+    </dt>
+    <dd>
+        
+    </dd>
+</dl>
+
+
+
+
+
+11. Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern.
+12. Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern.
+13. Write a few Javascript instructions to extend the Module of Question 10 to have a public address field and
+public methods setAddress(newAddress) and getAddress( ).
+14. What is the output of the following code?
+const promise = new Promise((resolve, reject) => {
+reject(“Hattori”);
+});
+promise.then(val => alert(“Success: “ + val))
+.catch(e => alert(“Error: “ + e));
+15. What is the output of the following code?
+const promise = new Promise((resolve, reject) => {
+resolve(“Hattori”);
+setTimeout(()=> reject(“Yoshi”), 500);
+});
+promise.then(val => alert(“Success: “ + val))
+.catch(e => alert(“Error: “ + e));
+4
+16. What is the output of the following code?
+function job(state) {
+return new Promise(function(resolve, reject) {
+if (state) {
+resolve('success');
+} else {
+reject('error');
+}
+});
+}
+let promise = job(true);
+promise.then(function(data) {
+console.log(data);
+return job(false);})
+.catch(function(error) {
+console.log(error);
+return 'Error caught';
+});
+
+</body>
+</html>
