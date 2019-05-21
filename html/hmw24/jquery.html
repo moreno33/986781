@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/quiz.css"/>
+</head>
+<body>
+
+<dl>
+    <h1>jQuery Qyiz II</h1>
+    <dt>
+        1. Which, if any, of the following 3 code fragments are equivalent? Explain why they are different, if
+        they are. Explain why they can have different parameters and be equivalent, if they are equivalent.<br/>
+        //code fragment 1<br/>
+        $("li").each(function(idx, e) {<br/>
+        $(e).css(“color”, “yellow”); });<br/>
+        //code fragment 2<br/>
+        $("li").each(function() {<br/>
+        $(this).css(“color”, “yellow”); });<br/>
+        //code fragment 3<br/>
+        $("li").each(function(idx) {<br/>
+        $(this).css(“color”, “yellow”); });
+    </dt>
+    <dd>
+        The 3 code fragments are equivalent:<br/>
+        - In the first one, we pass the two parameters that the function needs, the
+        first parameter is the index of the current element and the second parameter is the element itself. In this case
+        any thing that we do on this second parameter will be done on the current element.<br/>
+        - In the second one, we don't pass any parameter to the function, that is not a problem and we apply the style on
+        $(this). It's the same thing, because $(this) represents the current element.<br/>
+        - In the last one, we pass only one parameter, that is the index. No problem again, and we apply the style on this
+        that represents the current element.<br/>
+        In conclusion, the 3 code fragments are equivalent.
+
+    </dd>
+    <dt>
+        2. Write a jQuery expression to find all divs on a page that include an unordered list in them, and make
+        their text color be blue.<br/>
+        &lt;div&gt;no ul here &lt;/div&gt;<br/>
+        &lt;div&gt;<br/>
+            This does contain a ul.<br/>
+            &lt;ul&gt;<br/>
+                &lt;li&gt;the first item&lt;/li&gt;<br/>
+                &lt;li&gt;the second item&lt;/li&gt;<br/>
+            &lt;/ul&gt;<br/>
+        &lt;/div&gt;<br/>
+    </dt>
+    <dd>
+        &lt;script&gt;<br/>
+            $("div ul").parent().css({color:"blue"});<br/>
+        &lt;/script&gt;
+    </dd>
+    <dt>
+        3. Write jQuery code to append the following div element (and all of its contents) dynamically to the body element.<br/>
+        &lt;div&gt;&lt;h1&gt;JQuery Core&lt;/h1&gt;&lt;/div&gt;<br/>
+        HTML:<br/>
+        &lt;!DOCTYPE html&gt;<br/>
+        &lt;html&gt;<br/>
+        &lt;head&gt;<br/>
+            &lt;meta charset="utf-8"&gt;<br/>
+            &lt;title&gt;JS Bin&lt;/title&gt;<br/>
+        &lt;/head&gt;<br/>
+        &lt;body&gt;<br/>
+
+        &lt;/body&gt;<br/>
+        &lt;/html&gt;
+    </dt>
+    <dd>
+        &lt;script&gt;<br/>
+            $("body").append(&lt;div&gt;&lt;h1&gt;JQuery Core&lt;/h1&gt;&lt;/div&gt;);<br/>
+        &lt;/script&gt;
+    </dd>
+</dl>
+
+
+
+
+</body>
+
+
+
+</body>
+</html>
