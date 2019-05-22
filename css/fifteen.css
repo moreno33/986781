@@ -1,0 +1,31 @@
+body, button{
+    font-family: cursive;
+    font-size: 14pt;
+}
+p, div, h1{
+    margin: auto;
+    display: table;
+    text-align: center;
+}
+#puzzlearea{
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+#puzzlearea>div{
+    width: 90px;
+    height: 90px;
+    margin: 0;
+    font-size: 40pt;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+}
+.nomouseover{
+    border: 5px solid black;
+    color: #000;
+}
+.mouseover{
+    border: 5px solid red;
+    color: red;
+}
